@@ -4,7 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 
 async function getVideoInfo(url: string) {
   const res = await fetch(
-    `http://localhost:5000/api/youtube/info?url=${encodeURIComponent(url)}`
+    `https://yt-downloader-mern.onrender.com/api/youtube/info?url=${encodeURIComponent(url)}`
   );
 
   if (!res.ok) {
@@ -87,7 +87,7 @@ export function useDownload() {
   const download = (url: string, formatId: string) => {
     setIsDownloading(true);
 
-    const dlUrl = `http://localhost:5000/api/youtube/download?url=${encodeURIComponent(
+    const dlUrl = `https://yt-downloader-mern.onrender.com/api/youtube/download?url=${encodeURIComponent(
       url
     )}&formatId=${encodeURIComponent(formatId)}`;
 
